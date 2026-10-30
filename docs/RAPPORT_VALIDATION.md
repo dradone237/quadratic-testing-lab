@@ -153,7 +153,7 @@ Interprétation :
 | Périmètre | Lignes | Branches |
 |---|---|---|
 | Code métier (hors GUI) | **100 %** (1424/1424) | **100 %** (396/396) |
-| Interface graphique (mesure séparée, `tests/test_gui.py`) | 92,9 % (509/548) | 90 % en mesure combinée lignes + branches (72 branches, 13 partielles) |
+| Interface graphique (mesure séparée, `tests/test_gui.py`) | 92,8 % (512/552) | 90 % en mesure combinée lignes + branches (72 branches, 13 partielles) |
 
 Six blocs sont exclus par `# pragma: no cover`, chacun justifié :
 
