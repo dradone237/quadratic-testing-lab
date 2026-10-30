@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quadratic-testing-lab"
+version = "1.0.0"
+description = "Résolution et vérification robuste des équations du second degré avec Jenny, Uniwise et Pairwise Testing."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Projet universitaire VVT" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-cov>=5",
+    "hypothesis>=6.100",
+]
+# Compilateur C utilisé pour construire Jenny lorsque GCC est absent (zig cc).
+build-jenny = ["ziglang>=0.13"]
+
+[project.scripts]
+quadratic-lab = "quadratic_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --strict-markers"
+markers = [
+    "jenny: nécessite l'exécutable Jenny compilé",
+    "gui: nécessite un affichage graphique Tkinter",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["quadratic_lab"]
+# Le « code métier » mesuré exclut l'interface graphique (mesurée à part)
+# et le point d'entrée trivial __main__.py.
+omit = ["*/quadratic_lab/gui/*", "*/quadratic_lab/__main__.py"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+exclude_also = [
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+]

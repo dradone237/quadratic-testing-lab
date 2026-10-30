@@ -1,0 +1,13 @@
+# Commande      : jenny -n1 5 5 5
+# Exécutable    : C:\Users\SmartCamp PC1\Desktop\ProjetM2\quadratic-testing-lab\tools\jenny\bin\jenny.exe
+# Arguments     : ['-n1', '5', '5', '5']
+# Code retour   : 0
+# Durée (s)     : 0.011249
+# Date          : 2026-10-30T17:34:33
+# Lignes        : 5
+# --- sortie standard brute de Jenny ci-dessous (non modifiée) ---
+ 1a 2d 3a 
+ 1b 2b 3e 
+ 1c 2e 3b 
+ 1d 2c 3c 
+ 1e 2a 3d 

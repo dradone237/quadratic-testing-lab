@@ -1,0 +1,17 @@
+# Fins de ligne normalisées (LF dans le dépôt) pour que le projet fonctionne
+# à l'identique sous Windows et sous Ubuntu.
+* text=auto eol=lf
+
+# Scripts : LF obligatoire sous Linux, CRLF pour PowerShell sous Windows.
+*.sh  text eol=lf
+*.ps1 text eol=crlf
+
+# Source officielle de Jenny : octets conservés tels quels (SHA-256 vérifié).
+tools/jenny/src/jenny.c -text
+
+# Traces brutes de Jenny : preuve non modifiée (contient les CRLF de Windows).
+samples/jenny_*_raw.txt -text
+
+# Binaires
+*.png binary
+*.jpg binary
